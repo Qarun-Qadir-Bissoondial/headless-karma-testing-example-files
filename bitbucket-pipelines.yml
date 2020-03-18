@@ -1,0 +1,16 @@
+image: rastasheep/alpine-node-chromium:12-alpine
+
+pipelines:
+  branches:
+    '{master}':
+      - step:
+          name: Build and test
+          image: rastasheep/alpine-node-chromium:12-alpine
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run test:prod
+            - npm run build
+          artifacts:
+            - dist/**
