@@ -1,5 +1,3 @@
-image: rastasheep/alpine-node-chromium:12-alpine
-
 pipelines:
   branches:
     '{master}':
